@@ -1,0 +1,4 @@
+build*/
+dist*/
+*.kdev4
+*.bat

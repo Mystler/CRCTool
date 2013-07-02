@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">CRCTool</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="6" column="0">
+     <widget class="QPushButton" name="btnGenerate">
+      <property name="text">
+       <string>Generate</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QToolButton" name="btnCRC">
+      <property name="text">
+       <string notr="true">...</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QToolButton" name="btnFile">
+      <property name="text">
+       <string notr="true">...</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1" colspan="2">
+     <widget class="QPushButton" name="btnValidate">
+      <property name="text">
+       <string>Validate</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0" colspan="3">
+     <widget class="QTextEdit" name="txtLog">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QLineEdit" name="edCRC"/>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QLineEdit" name="edFile"/>
+    </item>
+    <item row="7" column="0" colspan="3">
+     <widget class="QLabel" name="lblLog">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Log:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="3">
+     <widget class="QLabel" name="lblFile">
+      <property name="text">
+       <string>File:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="3">
+     <widget class="QLabel" name="lblCRC">
+      <property name="text">
+       <string>CRC-File:</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuLanguage">
+    <property name="title">
+     <string>Language</string>
+    </property>
+    <addaction name="actLangEn"/>
+    <addaction name="actLangDe"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actAbout"/>
+    <addaction name="actClearLog"/>
+   </widget>
+   <addaction name="menuLanguage"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actLangEn">
+   <property name="text">
+    <string notr="true">English</string>
+   </property>
+  </action>
+  <action name="actLangDe">
+   <property name="text">
+    <string notr="true">Deutsch</string>
+   </property>
+  </action>
+  <action name="actAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actClearLog">
+   <property name="text">
+    <string>Clear Log...</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>edFile</tabstop>
+  <tabstop>edCRC</tabstop>
+  <tabstop>btnGenerate</tabstop>
+  <tabstop>btnValidate</tabstop>
+  <tabstop>btnFile</tabstop>
+  <tabstop>btnCRC</tabstop>
+  <tabstop>txtLog</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>edCRC</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btnGenerate</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>edFile</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btnGenerate</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>58</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
